@@ -32,7 +32,7 @@ This project details the end-to-end development of a modern data warehouse for a
 
 ## :building_construction: High-Level Architecture
 
-![Medallion Architecture Diagram](docs/High Level Architecture.drawio)
+![Medallion Architecture Diagram](docs/high_level_architecture.png)
 
 ---
 
