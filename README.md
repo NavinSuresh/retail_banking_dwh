@@ -3,7 +3,7 @@
 ---
 
 ## :bulb: Project Overview
-This project details the end-to-end development of a modern data warehouse for a simulated UK retail bank, utilizing **PostgreSQL**. It focuses on consolidating customer, account, and transaction data from 6 London branches for **Q1 2024**. The core aim is to create a robust data foundation for Business Intelligence (BI) reporting, KPI dashboards, and to showcase a comprehensive ETL pipeline that mirrors real-world data patterns and challenges. Data is synthetically generated using Python (Faker).
+This project details the end-to-end development of a modern data warehouse for a simulated UK retail bank, utilizing **PostgreSQL**. It focuses on consolidating customer, account, and transaction data from different branches for **Q1 2024**. The core aim is to create a robust data foundation for Business Intelligence (BI) reporting, KPI dashboards, and to showcase a comprehensive ETL pipeline that mirrors real-world data patterns and challenges. Data is synthetically generated using Python (Faker).
 
 ---
 
@@ -16,6 +16,7 @@ This project details the end-to-end development of a modern data warehouse for a
 - **Data Scope**:
   - Customers: ~2,000 unique customer records.
   - Accounts: ~2,450 active bank accounts.
+  - Branches: 6 unique bank branches.
   - Transactions: ~65,000 individual financial transactions for Q1 2024.
   - Initial balances: Account balances as of 2024-01-01.
  
