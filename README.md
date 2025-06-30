@@ -68,7 +68,7 @@ data-warehouse-project/
 
 ## :man_technologist: Technology Stack
 - **Database**: PostgreSQL  
-- **Scripting**: PLgSQL, Python (Faker, pandas, numpy)
+- **Scripting**: PLpgSQL, Python (Faker, pandas, numpy)
 - **Version Control**: Git / GitHub  
 
 ---
