@@ -26,37 +26,32 @@ This document outlines the naming conventions used for schemas, tables, views, c
 ## Table Naming Conventions
 
 ### Bronze Rules
-Tables represent raw data from source systems; names reflect the origin.
+Tables represent raw data from source systems; all names reflect the origin.
 
 ```
-<source>_<entity>
+<source_system>_<entity>
 ```
-- `cbs_customer_master` (from `raw_customer.csv`)
-- `cbs_account_master` (from `raw_accounts.csv`)
-- `tps_transaction_log` (from `raw_transactions.csv`)
-- `ref_transaction_codes` (from `transaction_code.csv`)
-- `ref_branch_master` (from `raw_branch.csv`)
+- `source_system`: Name of the source system ('cbs', 'tps', 'ref')
+- `entity`: Exact name of the csv file from the source system
+- Example: `tps_txn_log.csv`
 
 ### Silver Rules
-Cleansed and conformed tables; preserve source prefix and append `_silver`.
+Cleansed and conformed tables; same names as the bronze layer.
 
 ```
-<source>_<entity>_silver
+<source_system>_<entity>
 ```
-- `cbs_customer_master_silver`
-- `tps_transaction_log_silver`
+- - Example: `tps_txn_log.csv`
 
 ### Gold Rules
-Business-ready star schema tables.
+Business-ready star schema materialized views; all names should be meaningful and represent the business entity .
 
 ```
-dim_<entity>
-fact_<entity>
+<table_role>_<entity>
 ```
-- `dim_customers`
-- `dim_branches`
-- `dim_accounts`
-- `fact_transactions`
+- `table_role`: Describes whether the table is a Fact or Dimension table.
+- `entity`: Descriptive and business aligned name (eg: 'customers', 'accounts')
+- Example: `fact_transactions`
 
 ---
 
@@ -71,12 +66,12 @@ All primary keys in dimension tables use the `_key` suffix.
 - Example: `customer_key` in `dim_customers`.
 
 ### Technical Columns
-System metadata columns prefixed with `dwh_`.
+System metadata columns prefixed with `dwh_`, followed by a descriptive name indicating the column's purpose.
 
 ```
 dwh_<description>
 ```
-- Example: `dwh_load_date`, `dwh_batch_id`
+- Example: `dwh_load_date`
 
 ---
 
@@ -84,11 +79,8 @@ dwh_<description>
 Naming pattern for ETL stored procedures:
 
 ```
-load_<layer>_<entity>
+<layer>_load_sp
 ```
 - `<layer>`: `bronze`, `silver`, or `gold`
-- `<entity>`: target table name
-- Examples:
-  - `load_bronze_cbs_customer_master`
-  - `load_silver_tps_transaction_log`
-  - `load_gold_fact_transactions`
+- Example: `bronze_load_sp`
+
