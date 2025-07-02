@@ -1,0 +1,9 @@
+txn_code,subtype,channel,description
+10,Cash,Branch,Cash transaction at Branch
+11,Cash,ATM/CDM,Cash transaction at ATM/CDM
+12,Intrabank Transfer,Mobile/Internet,Transfer with an external bank account via mobile banking or Internet banking
+13,Intrabank Transfer,Branch,Transfer with an external bank account initiated at branch
+14,Interbank Transfer,Mobile/Internet,Same bank transfer via mobile banking or Internet banking
+15,Interbank Transfer,Branch,Same bank transfer initiated at branch
+16,POS,POS,Point of Sale debit
+17,Internet Payment,Internet Payment,Internet/ Ecommerce payments
