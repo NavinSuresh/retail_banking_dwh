@@ -41,7 +41,7 @@ Cleansed and conformed tables; same names as the bronze layer.
 ```
 <source_system>_<entity>
 ```
-- - Example: `tps_txn_log.csv`
+- Example: `tps_txn_log.csv`
 
 ### Gold Rules
 Business-ready star schema materialized views; all names should be meaningful and represent the business entity .
@@ -81,6 +81,6 @@ Naming pattern for ETL stored procedures:
 ```
 <layer>_load_sp
 ```
-- `<layer>`: `bronze`, `silver`, or `gold`
+- `<layer>`: `bronze` or `silver`
 - Example: `bronze_load_sp`
 
